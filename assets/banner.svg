@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">Un autómata leyendo su cinta</title>
+<desc id="desc">Un autómata finito determinista de tres estados que acepta las cadenas que terminan en 1. Lee la cadena 1001011 símbolo a símbolo, se ilumina el estado activo y la transición usada, y al final acepta.</desc>
+<defs>
+<filter id="shadow" x="-100%" y="-100%" width="300%" height="300%">
+<feGaussianBlur in="SourceAlpha" stdDeviation="3.5"/><feOffset dy="3" result="b"/>
+<feFlood class="shadow-flood"/><feComposite in2="b" operator="in"/>
+<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+<feGaussianBlur in="SourceAlpha" stdDeviation="6" result="b"/>
+<feFlood class="glow-flood"/><feComposite in2="b" operator="in" result="g"/>
+<feOffset in="g" dy="2" result="g2"/>
+<feMerge><feMergeNode in="g2"/><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0 0L10 5L0 10z"/></marker><marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mkr" d="M0 0L10 5L0 10z"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path style="fill:var(--ink)" d="M0 0L10 5L0 10z"/></marker>
+</defs>
+<style>
+:root{--bg:#ffffff;--ink:#1f2328;--hist:#8c959f;--hist-op:.6;--red:#e5383b;--shadow:#000;--shadow-op:.35}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--ink:#f0f6fc;--hist:#f0f6fc;--hist-op:.4;--red:#ff4d4f;--shadow:#fff;--shadow-op:.45}}
+.bg{fill:var(--bg)}
+.shadow-flood{flood-color:var(--shadow);flood-opacity:var(--shadow-op)}
+.glow-flood{flood-color:var(--red);flood-opacity:.9}
+.anim{animation-iteration-count:infinite;animation-timing-function:ease-in-out;animation-fill-mode:both}
+@media (prefers-reduced-motion:reduce){.anim{animation-play-state:paused}}
+.st,.hl,.ed,.sym,.head,.acc,.start{animation-duration:15s}
+.st{fill:var(--bg);stroke:var(--ink);stroke-width:3px;filter:url(#shadow)}
+.stl{fill:var(--ink);font:700 22px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-anchor:middle;dominant-baseline:central}
+.hl{fill:var(--red);filter:url(#glow);opacity:0}
+.fin{fill:none;stroke:var(--ink);stroke-width:2px}
+.edb{fill:none;stroke:var(--hist);stroke-opacity:var(--hist-op);stroke-width:2px}
+.ed{fill:none;stroke:var(--red);stroke-width:3px;opacity:0}
+.el{fill:var(--hist);fill-opacity:var(--hist-op);font:600 17px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-anchor:middle;dominant-baseline:central}
+.cell{fill:none;stroke:var(--hist);stroke-opacity:var(--hist-op);stroke-width:2px}
+.sym{font:700 26px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-anchor:middle;dominant-baseline:central}
+.head{fill:none;stroke:var(--red);stroke-width:3.5px;filter:url(#glow)}
+.acc{fill:none;stroke:var(--red);stroke-width:2px;opacity:0;transform-box:fill-box;transform-origin:center}
+.mk{fill:var(--hist);fill-opacity:var(--hist-op)}.mkr{fill:var(--red)}
+.start{stroke:var(--ink);stroke-width:3px}
+@keyframes s0{0.000%{fill:var(--ink);opacity:1} 12.950%{fill:var(--ink);opacity:1} 14.950%{fill:var(--hist);opacity:var(--hist-op)} 94.000%{fill:var(--hist);opacity:var(--hist-op)} 97.000%{fill:var(--hist);opacity:0} 100.000%{fill:var(--ink);opacity:0}}.s0{animation-name:s0}
+@keyframes s1{0.000%{fill:var(--ink);opacity:1} 21.950%{fill:var(--ink);opacity:1} 23.950%{fill:var(--hist);opacity:var(--hist-op)} 94.000%{fill:var(--hist);opacity:var(--hist-op)} 97.000%{fill:var(--hist);opacity:0} 100.000%{fill:var(--ink);opacity:0}}.s1{animation-name:s1}
+@keyframes s2{0.000%{fill:var(--ink);opacity:1} 30.950%{fill:var(--ink);opacity:1} 32.950%{fill:var(--hist);opacity:var(--hist-op)} 94.000%{fill:var(--hist);opacity:var(--hist-op)} 97.000%{fill:var(--hist);opacity:0} 100.000%{fill:var(--ink);opacity:0}}.s2{animation-name:s2}
+@keyframes s3{0.000%{fill:var(--ink);opacity:1} 39.950%{fill:var(--ink);opacity:1} 41.950%{fill:var(--hist);opacity:var(--hist-op)} 94.000%{fill:var(--hist);opacity:var(--hist-op)} 97.000%{fill:var(--hist);opacity:0} 100.000%{fill:var(--ink);opacity:0}}.s3{animation-name:s3}
+@keyframes s4{0.000%{fill:var(--ink);opacity:1} 48.950%{fill:var(--ink);opacity:1} 50.950%{fill:var(--hist);opacity:var(--hist-op)} 94.000%{fill:var(--hist);opacity:var(--hist-op)} 97.000%{fill:var(--hist);opacity:0} 100.000%{fill:var(--ink);opacity:0}}.s4{animation-name:s4}
+@keyframes s5{0.000%{fill:var(--ink);opacity:1} 57.950%{fill:var(--ink);opacity:1} 59.950%{fill:var(--hist);opacity:var(--hist-op)} 94.000%{fill:var(--hist);opacity:var(--hist-op)} 97.000%{fill:var(--hist);opacity:0} 100.000%{fill:var(--ink);opacity:0}}.s5{animation-name:s5}
+@keyframes s6{0.000%{fill:var(--ink);opacity:1} 66.950%{fill:var(--ink);opacity:1} 68.950%{fill:var(--hist);opacity:var(--hist-op)} 94.000%{fill:var(--hist);opacity:var(--hist-op)} 97.000%{fill:var(--hist);opacity:0} 100.000%{fill:var(--ink);opacity:0}}.s6{animation-name:s6}
+@keyframes head{0.000%{transform:translateX(90px);opacity:0} 5.000%{transform:translateX(90px);opacity:1} 12.500%{transform:translateX(90px);opacity:1} 14.750%{transform:translateX(142px);opacity:1} 21.500%{transform:translateX(142px);opacity:1} 23.750%{transform:translateX(194px);opacity:1} 30.500%{transform:translateX(194px);opacity:1} 32.750%{transform:translateX(246px);opacity:1} 39.500%{transform:translateX(246px);opacity:1} 41.750%{transform:translateX(298px);opacity:1} 48.500%{transform:translateX(298px);opacity:1} 50.750%{transform:translateX(350px);opacity:1} 57.500%{transform:translateX(350px);opacity:1} 59.750%{transform:translateX(402px);opacity:1} 66.500%{transform:translateX(402px);opacity:1} 68.750%{transform:translateX(454px);opacity:1} 73.000%{transform:translateX(454px);opacity:1} 76.000%{transform:translateX(454px);opacity:0} 100.000%{transform:translateX(90px);opacity:0}}.head{animation-name:head}
+@keyframes eq0q1{0.000%{opacity:0} 100.000%{opacity:0}}.eq0q1{animation-name:eq0q1}
+@keyframes eq0q2{0.000%{opacity:0} 12.200%{opacity:0} 12.500%{opacity:1} 16.550%{opacity:1} 17.900%{opacity:0} 100.000%{opacity:0}}.eq0q2{animation-name:eq0q2}
+@keyframes eq1q2{0.000%{opacity:0} 39.200%{opacity:0} 39.500%{opacity:1} 43.550%{opacity:1} 44.900%{opacity:0} 57.200%{opacity:0} 57.500%{opacity:1} 61.550%{opacity:1} 62.900%{opacity:0} 100.000%{opacity:0}}.eq1q2{animation-name:eq1q2}
+@keyframes eq2q1{0.000%{opacity:0} 21.200%{opacity:0} 21.500%{opacity:1} 25.550%{opacity:1} 26.900%{opacity:0} 48.200%{opacity:0} 48.500%{opacity:1} 52.550%{opacity:1} 53.900%{opacity:0} 100.000%{opacity:0}}.eq2q1{animation-name:eq2q1}
+@keyframes eq1q1{0.000%{opacity:0} 30.200%{opacity:0} 30.500%{opacity:1} 34.550%{opacity:1} 35.900%{opacity:0} 100.000%{opacity:0}}.eq1q1{animation-name:eq1q1}
+@keyframes eq2q2{0.000%{opacity:0} 66.200%{opacity:0} 66.500%{opacity:1} 70.550%{opacity:1} 71.900%{opacity:0} 100.000%{opacity:0}}.eq2q2{animation-name:eq2q2}
+@keyframes hq0{0.000%{opacity:0} 7.700%{opacity:0} 8.000%{opacity:1} 12.500%{opacity:1} 12.800%{opacity:0} 100.000%{opacity:0}}.hq0{animation-name:hq0}
+@keyframes hq1{0.000%{opacity:0} 23.450%{opacity:0} 23.750%{opacity:1} 30.500%{opacity:1} 30.800%{opacity:0} 32.450%{opacity:0} 32.750%{opacity:1} 39.500%{opacity:1} 39.800%{opacity:0} 50.450%{opacity:0} 50.750%{opacity:1} 57.500%{opacity:1} 57.800%{opacity:0} 100.000%{opacity:0}}.hq1{animation-name:hq1}
+@keyframes hq2{0.000%{opacity:0} 14.450%{opacity:0} 14.750%{opacity:1} 21.500%{opacity:1} 21.800%{opacity:0} 41.450%{opacity:0} 41.750%{opacity:1} 48.500%{opacity:1} 48.800%{opacity:0} 59.450%{opacity:0} 59.750%{opacity:1} 66.500%{opacity:1} 66.800%{opacity:0} 68.450%{opacity:0} 68.750%{opacity:1} 93.000%{opacity:1} 93.300%{opacity:0} 100.000%{opacity:0}}.hq2{animation-name:hq2}
+@keyframes acca{0.000%{transform:scale(1);opacity:0} 73.000%{transform:scale(1);opacity:0} 73.200%{transform:scale(1);opacity:.85} 80.000%{transform:scale(2.6);opacity:0} 100.000%{transform:scale(2.6);opacity:0}}.acca{animation-name:acca}
+@keyframes accb{0.000%{transform:scale(1);opacity:0} 75.200%{transform:scale(1);opacity:0} 75.400%{transform:scale(1);opacity:.85} 82.200%{transform:scale(2.6);opacity:0} 100.000%{transform:scale(2.6);opacity:0}}.accb{animation-name:accb}</style>
+<rect class="bg" width="1200" height="300"/>
+<rect class="cell" x="90" y="122" width="52" height="56" rx="4"/>
+<text class="sym s0 anim" x="116.0" y="150">1</text>
+<rect class="cell" x="142" y="122" width="52" height="56" rx="4"/>
+<text class="sym s1 anim" x="168.0" y="150">0</text>
+<rect class="cell" x="194" y="122" width="52" height="56" rx="4"/>
+<text class="sym s2 anim" x="220.0" y="150">0</text>
+<rect class="cell" x="246" y="122" width="52" height="56" rx="4"/>
+<text class="sym s3 anim" x="272.0" y="150">1</text>
+<rect class="cell" x="298" y="122" width="52" height="56" rx="4"/>
+<text class="sym s4 anim" x="324.0" y="150">0</text>
+<rect class="cell" x="350" y="122" width="52" height="56" rx="4"/>
+<text class="sym s5 anim" x="376.0" y="150">1</text>
+<rect class="cell" x="402" y="122" width="52" height="56" rx="4"/>
+<text class="sym s6 anim" x="428.0" y="150">1</text>
+<rect class="head anim" x="0" y="116" width="52" height="68" rx="6"/>
+<path class="edb" d="M656.6 139.6 Q740.0 116.0 823.4 92.4" marker-end="url(#ah)"/>
+<text class="el" x="744.4" y="131.4">0</text>
+<path class="edb" d="M656.6 160.4 Q740.0 184.0 823.4 207.6" marker-end="url(#ah)"/>
+<text class="el" x="735.6" y="199.4">1</text>
+<path class="edb" d="M844.7 116.8 Q830.0 150.0 844.7 183.2" marker-end="url(#ah)"/>
+<text class="el" x="821.3" y="150.0">1</text>
+<path class="edb" d="M875.3 183.2 Q890.0 150.0 875.3 116.8" marker-end="url(#ah)"/>
+<text class="el" x="898.7" y="150.0">0</text>
+<path class="edb" d="M887.9 62.5 C975.0 20.0 975.0 144.0 891.1 103.8" marker-end="url(#ah)"/>
+<text class="el" x="972.0" y="82.0">0</text>
+<path class="edb" d="M887.9 198.5 C975.0 156.0 975.0 280.0 891.1 239.8" marker-end="url(#ah)"/>
+<text class="el" x="972.0" y="218.0">1</text>
+<line class="start" x1="526" y1="150" x2="580" y2="150" marker-end="url(#ahs)"/>
+<path class="ed eq0q1 anim" d="M656.6 139.6 Q740.0 116.0 823.4 92.4" marker-end="url(#ahr)"/>
+<path class="ed eq0q2 anim" d="M656.6 160.4 Q740.0 184.0 823.4 207.6" marker-end="url(#ahr)"/>
+<path class="ed eq1q2 anim" d="M844.7 116.8 Q830.0 150.0 844.7 183.2" marker-end="url(#ahr)"/>
+<path class="ed eq2q1 anim" d="M875.3 183.2 Q890.0 150.0 875.3 116.8" marker-end="url(#ahr)"/>
+<path class="ed eq1q1 anim" d="M887.9 62.5 C975.0 20.0 975.0 144.0 891.1 103.8" marker-end="url(#ahr)"/>
+<path class="ed eq2q2 anim" d="M887.9 198.5 C975.0 156.0 975.0 280.0 891.1 239.8" marker-end="url(#ahr)"/>
+<g transform="translate(620 150)"><circle class="hl hq0 anim" r="40"/><circle class="st" r="34"/><text class="stl">q0</text></g>
+<g transform="translate(860 82)"><circle class="hl hq1 anim" r="40"/><circle class="st" r="34"/><text class="stl">q1</text></g>
+<g transform="translate(860 218)"><circle class="hl hq2 anim" r="40"/><circle class="st" r="34"/><circle class="fin" r="27"/><text class="stl">q2</text></g>
+<circle class="acc acca anim" cx="860" cy="218" r="38"/>
+<circle class="acc accb anim" cx="860" cy="218" r="38"/>
+</svg>
