@@ -1,0 +1,4 @@
+Estado,Estado Inicial,Estados Finales,0,1
+q0,x,,q1,q2
+q1,,,q1,q2
+q2,,x,q1,q2
